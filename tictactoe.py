@@ -110,7 +110,8 @@ class Policy(nn.Module):
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
-        return F.log_softmax(x)
+        softmax = nn.Softmax()
+        return softmax(x)
 
 def select_action(policy, state):
     """Samples an action from the policy at the state."""
@@ -142,7 +143,7 @@ def compute_returns(rewards, gamma=1.0):
 
     for i in range(len(rewards)-1, -1, -1):
         if i == len(rewards)-1: G[i] = rewards[i]
-        else G[i] = rewards[i] + gamma * G[i+1]
+        else: G[i] = rewards[i] + gamma * G[i+1]
 
     return G
 
