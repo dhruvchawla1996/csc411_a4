@@ -138,8 +138,13 @@ def compute_returns(rewards, gamma=1.0):
     >>> compute_returns([0,-0.5,5,0.5,-10], 0.9)
     [-2.5965000000000003, -2.8850000000000002, -2.6500000000000004, -8.5, -10.0]
     """
-    # TODO
-    pass
+    G = [0] * len(rewards)
+
+    for i in range(len(rewards)-1, -1, -1):
+        if i == len(rewards)-1: G[i] = rewards[i]
+        else G[i] = rewards[i] + gamma * G[i+1]
+
+    return G
 
 def finish_episode(saved_rewards, saved_logprobs, gamma=1.0):
     """Samples an action from the policy at the state."""
@@ -159,11 +164,11 @@ def finish_episode(saved_rewards, saved_logprobs, gamma=1.0):
 def get_reward(status):
     """Returns a numeric given an environment status."""
     return {
-            Environment.STATUS_VALID_MOVE  : 0, # TODO
-            Environment.STATUS_INVALID_MOVE: 0,
-            Environment.STATUS_WIN         : 0,
-            Environment.STATUS_TIE         : 0,
-            Environment.STATUS_LOSE        : 0
+            Environment.STATUS_VALID_MOVE  : 1,
+            Environment.STATUS_INVALID_MOVE: -1,
+            Environment.STATUS_WIN         : 3,
+            Environment.STATUS_TIE         : 2,
+            Environment.STATUS_LOSE        : -3
     }[status]
 
 def train(policy, env, gamma=1.0, log_interval=1000):
