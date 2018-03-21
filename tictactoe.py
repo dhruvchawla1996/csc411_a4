@@ -104,10 +104,13 @@ class Policy(nn.Module):
     """
     def __init__(self, input_size=27, hidden_size=64, output_size=9):
         super(Policy, self).__init__()
-        # TODO
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
-        # TODO
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return F.log_softmax(x)
 
 def select_action(policy, state):
     """Samples an action from the policy at the state."""
@@ -136,6 +139,7 @@ def compute_returns(rewards, gamma=1.0):
     [-2.5965000000000003, -2.8850000000000002, -2.6500000000000004, -8.5, -10.0]
     """
     # TODO
+    pass
 
 def finish_episode(saved_rewards, saved_logprobs, gamma=1.0):
     """Samples an action from the policy at the state."""
