@@ -226,6 +226,23 @@ def load_weights(policy, episode):
     weights = torch.load("ttt/policy-%d.pkl" % episode)
     policy.load_state_dict(weights)
 
+def play_games_against_random(policy, env, games = 100):
+    """Play games against random and return number of games won, lost or tied"""
+    games_won, games_lost, games_tied = 0, 0, 0
+
+    for i in range(games):
+        state = env.reset()
+        done = False
+
+        while not done:
+            action, logprob = select_action(policy, state)
+            state, status, done = env.play_against_random(action)
+
+        if status == policy.STATUS_WIN: games_won += 1
+        elif status == policy.STATUS_LOSE: games_lost += 1
+        else: games_tied += 1
+
+    return games_won, games_lost, games_tied
 
 if __name__ == '__main__':
     import sys
@@ -240,4 +257,4 @@ if __name__ == '__main__':
         # using weightt checkpoint at episode int(<ep>)
         ep = int(sys.argv[1])
         load_weights(policy, ep)
-        print(first_move_distr(policy, env))
+        print(play_games_against_random(policy, env))
