@@ -10,6 +10,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torch.distributions
 from torch.autograd import Variable
+import matplotlib.pyplot as plt
 
 class Environment(object):
     """
@@ -102,7 +103,7 @@ class Policy(nn.Module):
     """
     The Tic-Tac-Toe Policy
     """
-    def __init__(self, input_size=27, hidden_size=64, output_size=9):
+    def __init__(self, input_size=27, hidden_size=256, output_size=9):
         super(Policy, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.fc2 = nn.Linear(hidden_size, output_size)
@@ -162,12 +163,13 @@ def finish_episode(saved_rewards, saved_logprobs, gamma=1.0):
     # note: retain_graph=True allows for multiple calls to .backward()
     # in a single step
 
+#TODO: play around with reward values
 def get_reward(status):
     """Returns a numeric given an environment status."""
     return {
             Environment.STATUS_VALID_MOVE  : 1,
             Environment.STATUS_INVALID_MOVE: -1,
-            Environment.STATUS_WIN         : 3,
+            Environment.STATUS_WIN         : 5,
             Environment.STATUS_TIE         : 2,
             Environment.STATUS_LOSE        : -3
     }[status]
@@ -178,6 +180,9 @@ def train(policy, env, gamma=1.0, log_interval=1000):
     scheduler = torch.optim.lr_scheduler.StepLR(
             optimizer, step_size=10000, gamma=0.9)
     running_reward = 0
+
+    episode_axis = []
+    return_axis = []
 
     for i_episode in count(1):
         saved_rewards = []
@@ -197,6 +202,8 @@ def train(policy, env, gamma=1.0, log_interval=1000):
         finish_episode(saved_rewards, saved_logprobs, gamma)
 
         if i_episode % log_interval == 0:
+            episode_axis.extend([i_episode])
+            return_axis.extend([running_reward/log_interval])
             print('Episode {}\tAverage return: {:.2f}'.format(
                 i_episode,
                 running_reward / log_interval))
@@ -211,6 +218,15 @@ def train(policy, env, gamma=1.0, log_interval=1000):
             scheduler.step()
             optimizer.zero_grad()
 
+        if i_episode == 50000:
+            fig = plt.figure()
+            plt.plot(episode_axis, return_axis)
+            plt.xlabel("episode #")
+            plt.ylabel("avereage return")
+            plt.title("Training curve of Tic-Tac-Toe model")
+            plt.savefig("figures/part5b_256.png")
+
+            return
 
 def first_move_distr(policy, env):
     """Display the distribution of first moves."""
