@@ -173,7 +173,7 @@ def get_reward(status):
     """Returns a numeric given an environment status."""
     return {
             Environment.STATUS_VALID_MOVE  : 1,
-            Environment.STATUS_INVALID_MOVE: -1,
+            Environment.STATUS_INVALID_MOVE: -250,
             Environment.STATUS_WIN         : 500,
             Environment.STATUS_TIE         : -3,
             Environment.STATUS_LOSE        : -3
@@ -209,13 +209,14 @@ def train(policy, env, gamma=0.75, log_interval=1000):
         if i_episode % log_interval == 0:
             episode_axis.extend([i_episode])
             return_axis.extend([running_reward/log_interval])
-            games_won, games_lost, games_tied = play_games_against_random(policy, env)
-            print('Episode {}\tAverage return: {:.2f}\tGames Won: {}\tGames Lost:{}\tGames Tied:{}'.format(
+            games_won, games_lost, games_tied, invalid_moves = play_games_against_random(policy, env)
+            print('Episode {}\tAverage return: {:.2f}\tGames Won: {}\tGames Lost:{}\tGames Tied:{}\tInvalid Moves:{}'.format(
                 i_episode,
                 running_reward / log_interval,
                 games_won, 
                 games_lost,
-                games_tied))
+                games_tied,
+                invalid_moves))
             running_reward = 0
 
         if i_episode % (log_interval) == 0:
@@ -253,7 +254,7 @@ def load_weights(policy, episode):
 
 def play_games_against_random(policy, env, games = 100):
     """Play games against random and return number of games won, lost or tied"""
-    games_won, games_lost, games_tied = 0, 0, 0
+    games_won, games_lost, games_tied, invalid_moves = 0, 0, 0, 0
 
     for i in range(games):
         state = env.reset()
@@ -263,13 +264,14 @@ def play_games_against_random(policy, env, games = 100):
         while not done:
             action, logprob = select_action(policy, state)
             state, status, done = env.play_against_random(action)
+            invalid_moves += (1 if status == env.STATUS_INVALID_MOVE else 0)
             # env.render()
 
         if status == env.STATUS_WIN: games_won += 1
         elif status == env.STATUS_LOSE: games_lost += 1
         else: games_tied += 1
 
-    return games_won, games_lost, games_tied
+    return games_won, games_lost, games_tied, invalid_moves
 
 if __name__ == '__main__':
     import sys
