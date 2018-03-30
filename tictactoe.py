@@ -12,6 +12,11 @@ import torch.distributions
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 
+# Set seeds
+np.random.seed(42)
+random.seed(42)
+torch.manual_seed(42)
+
 class Environment(object):
     """
     The Tic-Tac-Toe Environment
@@ -169,12 +174,12 @@ def get_reward(status):
     return {
             Environment.STATUS_VALID_MOVE  : 1,
             Environment.STATUS_INVALID_MOVE: -1,
-            Environment.STATUS_WIN         : 5,
-            Environment.STATUS_TIE         : 2,
+            Environment.STATUS_WIN         : 500,
+            Environment.STATUS_TIE         : -3,
             Environment.STATUS_LOSE        : -3
     }[status]
 
-def train(policy, env, gamma=1.0, log_interval=1000):
+def train(policy, env, gamma=0.75, log_interval=1000):
     """Train policy gradient."""
     optimizer = optim.Adam(policy.parameters(), lr=0.001)
     scheduler = torch.optim.lr_scheduler.StepLR(
@@ -204,9 +209,13 @@ def train(policy, env, gamma=1.0, log_interval=1000):
         if i_episode % log_interval == 0:
             episode_axis.extend([i_episode])
             return_axis.extend([running_reward/log_interval])
-            print('Episode {}\tAverage return: {:.2f}'.format(
+            games_won, games_lost, games_tied = play_games_against_random(policy, env)
+            print('Episode {}\tAverage return: {:.2f}\tGames Won: {}\tGames Lost:{}\tGames Tied:{}'.format(
                 i_episode,
-                running_reward / log_interval))
+                running_reward / log_interval,
+                games_won, 
+                games_lost,
+                games_tied))
             running_reward = 0
 
         if i_episode % (log_interval) == 0:
@@ -222,7 +231,7 @@ def train(policy, env, gamma=1.0, log_interval=1000):
             fig = plt.figure()
             plt.plot(episode_axis, return_axis)
             plt.xlabel("episode #")
-            plt.ylabel("avereage return")
+            plt.ylabel("average return")
             plt.title("Training curve of Tic-Tac-Toe model")
             plt.savefig("figures/part5b_256.png")
 
@@ -275,5 +284,5 @@ if __name__ == '__main__':
         # using weightt checkpoint at episode int(<ep>)
         ep = int(sys.argv[1])
         load_weights(policy, ep)
-        print(first_move_distr(policy, env))
+        # print(first_move_distr(policy, env))
         print(play_games_against_random(policy, env))
