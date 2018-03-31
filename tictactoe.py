@@ -189,6 +189,10 @@ def train(policy, env, gamma=0.75, log_interval=1000):
     episode_axis = []
     return_axis = []
 
+    win_rate_per_episode = []
+    loss_rate_per_episode = []
+    tie_rate_per_episode = []
+
     for i_episode in count(1):
         saved_rewards = []
         saved_logprobs = []
@@ -210,6 +214,9 @@ def train(policy, env, gamma=0.75, log_interval=1000):
             episode_axis.extend([i_episode])
             return_axis.extend([running_reward/log_interval])
             games_won, games_lost, games_tied, invalid_moves = play_games_against_random(policy, env)
+            win_rate_per_episode.extend([games_won/100.0])
+            loss_rate_per_episode.extend([games_lost/100.0])
+            tie_rate_per_episode.extend([games_tied/100.0])
             print('Episode {}\tAverage return: {:.2f}\tGames Won: {}\tGames Lost:{}\tGames Tied:{}\tInvalid Moves:{}'.format(
                 i_episode,
                 running_reward / log_interval,
@@ -229,12 +236,28 @@ def train(policy, env, gamma=0.75, log_interval=1000):
             optimizer.zero_grad()
 
         if i_episode == 50000:
-            fig = plt.figure()
+            #plot return
+            plt.figure()
             plt.plot(episode_axis, return_axis)
             plt.xlabel("episode #")
             plt.ylabel("average return")
             plt.title("Training curve of Tic-Tac-Toe model")
             plt.savefig("figures/part5b_256.png")
+
+            # print(win_rate_per_episode)
+            # print(loss_rate_per_episode)
+            # print(tie_rate_per_episode)
+
+            #plot win/loss rates
+            plt.figure()
+            plt.plot(episode_axis, win_rate_per_episode , label = "win rate")
+            plt.plot(episode_axis, loss_rate_per_episode, label = "loss rate")
+            plt.plot(episode_axis, tie_rate_per_episode, label = "tie rate")
+            plt.xlabel("episode #")
+            plt.ylabel("win/loss/tie rates")
+            plt.title("Evolution of Win/Loss/Tie rates with training")
+            plt.legend()
+            plt.savefig("figures/part6.png")
 
             return
 
@@ -253,7 +276,7 @@ def load_weights(policy, episode):
     policy.load_state_dict(weights)
 
 def play_games_against_random(policy, env, games = 100):
-    """Play games against random and return number of games won, lost or tied"""
+    """Play (100) games against random and return number of games won, lost or tied"""
     games_won, games_lost, games_tied, invalid_moves = 0, 0, 0, 0
 
     for i in range(games):
