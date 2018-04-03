@@ -287,15 +287,17 @@ def play_games_against_random(policy, env, games = 100):
     games_won, games_lost, games_tied, invalid_moves = 0, 0, 0, 0
 
     for i in range(games):
+        if i % 19 == 0:
+            print("Game: %s"%i)
         state = env.reset()
         done = False
-        # print(i)
 
         while not done:
             action, logprob = select_action(policy, state)
             state, status, done = env.play_against_random(action)
             invalid_moves += (1 if status == env.STATUS_INVALID_MOVE else 0)
-            # env.render()
+            if i % 19 == 0:
+                env.render()
 
         if status == env.STATUS_WIN: games_won += 1
         elif status == env.STATUS_LOSE: games_lost += 1
@@ -342,19 +344,20 @@ def part_7():
     plt.savefig("figures/part7.png")
 if __name__ == '__main__':
 
-    part_7()
 
-    # import sys
-    # policy = Policy()
-    # env = Environment()
-    #
-    # if len(sys.argv) == 1:
-    #     # `python tictactoe.py` to train the agent
-    #     train(policy, env)
-    # else:
-    #     # `python tictactoe.py <ep>` to print the first move distribution
-    #     # using weightt checkpoint at episode int(<ep>)
-    #     ep = int(sys.argv[1])
-    #     load_weights(policy, ep)
-    #     # print(first_move_distr(policy, env))
-    #     print(play_games_against_random(policy, env))
+    import sys
+    policy = Policy()
+    env = Environment()
+
+    if len(sys.argv) == 1:
+        # `python tictactoe.py` to train the agent
+        train(policy, env)
+    else:
+        # `python tictactoe.py <ep>` to print the first move distribution
+        # using weightt checkpoint at episode int(<ep>)
+        ep = int(sys.argv[1])
+        load_weights(policy, ep)
+        # print(first_move_distr(policy, env))
+        print(play_games_against_random(policy, env))
+
+    #part_7()

@@ -38,6 +38,8 @@
 \usepackage{amsmath, amsthm, amssymb} % Required for writing equations
 \usepackage{pythonhighlight} % Required for including Python code
 \usepackage{siunitx} % Required for scientific notation
+\usepackage{multicol}
+
 
 % Margins
 \topmargin=-0.45in
@@ -395,6 +397,113 @@ The number of hidden units were reset to values 32, 128 and 256 to obtain the fo
 From Figure \ref{fig:part5a}, it seems as though the policy never played invalid moves. 
 
 \subsection*{5(d)}
+Using the final learned policy, the agent wins 98/100 games and ties 2/100. This can be seen in Figure \ref{fig:part6}.
+
+\begin{multicols}{2}
+	\begin{verbatim}
+	Game: 0
+	
+	..x
+	...
+	o..
+	====
+	o.x
+	...
+	o.x
+	====
+	o.x
+	..x
+	o.x
+	====
+	
+	\end{verbatim}
+	\columnbreak
+	\begin{verbatim}
+	Game: 19
+	o.x
+	...
+	...
+	====
+	o.x
+	o..
+	..x
+	====
+	o.x
+	o.x
+	..x
+	====
+	\end{verbatim}
+	
+	
+\end{multicols}
+
+
+\begin{verbatim}
+
+Game: 38
+..x
+..o
+...
+====
+..x
+.xo
+..o
+====
+..x
+.xo
+x.o
+====
+
+
+
+Game: 57
+..x
+o..
+...
+====
+o.x
+o..
+..x
+====
+o.x
+o.x
+..x
+====
+
+
+Game: 76
+.ox
+...
+...
+====
+.ox
+...
+.ox
+====
+.ox
+..x
+.ox
+====
+
+
+Game: 95
+..x
+...
+..o
+====
+.ox
+.x.
+..o
+====
+.ox
+.x.
+x.o
+====
+
+\end{verbatim}
+
+
+
 
 \end{homeworkProblem}
 
@@ -426,6 +535,14 @@ Refer to Figure \ref{fig:part6}.
 	\end{figure}
 	
 \end{homeworkProblem}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 8
+%----------------------------------------------------------------------------------------
+\begin{homeworkProblem}
+\end{homeworkProblem}
+
 
 
 
