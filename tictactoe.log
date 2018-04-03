@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 APR 2018 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  3 APR 2018 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,77 +858,66 @@ Package xcolor Warning: Incompatible color definition on input line 344.
 File: figures/part5a.png Graphic file (type png)
 
 <use figures/part5a.png>
-Package pdftex.def Info: figures/part5a.png used on input line 369.
+Package pdftex.def Info: figures/part5a.png used on input line 368.
 (pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
+ [6
 
-<figures/part5b_32.png, id=142, 462.528pt x 346.896pt>
+ <./figures/part5a.png>]
+<figures/part5b_32.png, id=151, 462.528pt x 346.896pt>
 File: figures/part5b_32.png Graphic file (type png)
 
 <use figures/part5b_32.png>
-Package pdftex.def Info: figures/part5b_32.png used on input line 378.
+Package pdftex.def Info: figures/part5b_32.png used on input line 377.
 (pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/part5b_128.png, id=143, 462.528pt x 346.896pt>
+ [7 <./figures/part5b_32.png>]
+<figures/part5b_128.png, id=160, 462.528pt x 346.896pt>
 File: figures/part5b_128.png Graphic file (type png)
 
 <use figures/part5b_128.png>
 Package pdftex.def Info: figures/part5b_128.png used on input line 384.
 (pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/part5b_256.png, id=144, 462.528pt x 346.896pt>
+ [8 <./figures/part5b_128.png>]
+<figures/part5b_256.png, id=168, 462.528pt x 346.896pt>
 File: figures/part5b_256.png Graphic file (type png)
 
 <use figures/part5b_256.png>
 Package pdftex.def Info: figures/part5b_256.png used on input line 391.
 (pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6
-
- <./figures/part5a.png>] [7 <./figures/part5b_32.png>] [8 <./figures/part5b_128
-.png>] [9 <./figures/part5b_256.png>]
-<figures/part6.png, id=182, 462.528pt x 346.896pt>
+ [9 <./figures/part5b_256.png>] [10]
+<figures/part6.png, id=187, 462.528pt x 346.896pt>
 File: figures/part6.png Graphic file (type png)
  <use figures/part6.png>
-Package pdftex.def Info: figures/part6.png used on input line 513.
+Package pdftex.def Info: figures/part6.png used on input line 512.
 (pdftex.def)             Requested size: 469.75499pt x 352.33655pt.
 
-[10
+[11
 
- <./figures/part6.png>] <figures/part7.png, id=190, 722.7pt x 722.7pt>
+ <./figures/part6.png>] <figures/part7.png, id=195, 722.7pt x 722.7pt>
 File: figures/part7.png Graphic file (type png)
 
 <use figures/part7.png>
-Package pdftex.def Info: figures/part7.png used on input line 527.
+Package pdftex.def Info: figures/part7.png used on input line 526.
 (pdftex.def)             Requested size: 469.75499pt x 469.76045pt.
- [11
+ [12
 
  <./figures/part7.png>]
 
 AED: lastpage setting LastPage
-[12
+[13
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 546.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 546.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 545.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 545.
  (./tictactoe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 546.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 546.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 545.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 545.
 Package rerunfilecheck Info: File `tictactoe.out' has not changed.
 (rerunfilecheck)             Checksum: 48A88937C30206713EE84BBA48DAA1A6;392.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 546.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 545.
  ) 
 Here is how much of TeX's memory you used:
- 19786 strings out of 492995
- 364531 string characters out of 6132704
+ 19787 strings out of 492995
+ 364538 string characters out of 6132704
  623418 words of memory out of 5000000
  23053 multiletter control sequences out of 15000+600000
  17483 words of font info for 68 fonts, out of 8000000 for 9000
@@ -945,10 +934,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/urw/courier/ucrro8a.pfb>
-Output written on tictactoe.pdf (12 pages, 334982 bytes).
+Output written on tictactoe.pdf (13 pages, 335476 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
+ 96 named destinations out of 1000 (max. 500000)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -363,43 +363,42 @@ return {
 \begin{homeworkProblem}
 %changing hyperparameters? 
 \subsection*{5(a)}
-
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 64)}
 	\includegraphics[width=\linewidth]{figures/part5a.png}
 	\label{fig:part5a}
 \end{figure}
-	
 \subsection*{5(b)}
 The number of hidden units were reset to values 32, 128 and 256 to obtain the following training curves:
 
+\newpage
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 32)}
 	\includegraphics[width=\linewidth]{figures/part5b_32.png}
 	\label{fig:part5b_32}
 \end{figure}
+\newpage
 
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 128)}
 	\includegraphics[width=\linewidth]{figures/part5b_128.png}
 	\label{fig:part5b_128}
-	
-\end{figure}
 
+\end{figure}
+\newpage
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 256)}
 	\includegraphics[width=\linewidth]{figures/part5b_256.png}
 	\label{fig:part5b_256}
 \end{figure}
-
+\newpage
 
 \subsection*{5(c)}
 From Figure \ref{fig:part5a}, it seems as though the policy never played invalid moves. 
 
 \subsection*{5(d)}
-Using the final learned policy, the agent wins 98/100 games and ties 2/100. This can be seen in Figure \ref{fig:part6}.
+Using the final learned policy, the agent wins 98/100 games and ties 2/100. This can be seen in Figure \ref{fig:part6}. Five of the 100 sample games are displayed below:
 
-\newpage
 \begin{multicols}{5}
 	\begin{verbatim}
 	Game: 0
@@ -433,22 +432,22 @@ Using the final learned policy, the agent wins 98/100 games and ties 2/100. This
 	====
 	\end{verbatim}
 	\columnbreak
-	\begin{verbatim}
-	Game: 38
-	..x
-	..o
-	...
-	====
-	..x
-	.xo
-	..o
-	====
-	..x
-	.xo
-	x.o
-	====
-	\end{verbatim}
-	\columnbreak
+%	\begin{verbatim}
+%	Game: 38
+%	..x
+%	..o
+%	...
+%	====
+%	..x
+%	.xo
+%	..o
+%	====
+%	..x
+%	.xo
+%	x.o
+%	====
+%	\end{verbatim}
+%	\columnbreak
 	\begin{verbatim}
 	Game: 57
 	..x
@@ -498,7 +497,7 @@ Using the final learned policy, the agent wins 98/100 games and ties 2/100. This
 	\end{verbatim}
 	\columnbreak
 \end{multicols}
-
+\newpage
 \end{homeworkProblem}
 
 \clearpage
