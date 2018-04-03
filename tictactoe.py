@@ -193,6 +193,7 @@ def train(policy, env, gamma=0.75, log_interval=1000):
     loss_rate_per_episode = []
     tie_rate_per_episode = []
 
+
     for i_episode in count(1):
         saved_rewards = []
         saved_logprobs = []
@@ -211,12 +212,20 @@ def train(policy, env, gamma=0.75, log_interval=1000):
         finish_episode(saved_rewards, saved_logprobs, gamma)
 
         if i_episode % log_interval == 0:
+
             episode_axis.extend([i_episode])
             return_axis.extend([running_reward/log_interval])
+
             games_won, games_lost, games_tied, invalid_moves = play_games_against_random(policy, env)
             win_rate_per_episode.extend([games_won/100.0])
             loss_rate_per_episode.extend([games_lost/100.0])
             tie_rate_per_episode.extend([games_tied/100.0])
+
+            if i_episode == log_interval:
+                first_move_prob_distr = first_move_distr(policy,env).numpy()
+            else:
+                first_move_prob_distr = np.dstack((first_move_prob_distr, first_move_distr(policy,env).numpy()))
+
             print('Episode {}\tAverage return: {:.2f}\tGames Won: {}\tGames Lost:{}\tGames Tied:{}\tInvalid Moves:{}'.format(
                 i_episode,
                 running_reward / log_interval,
@@ -244,10 +253,6 @@ def train(policy, env, gamma=0.75, log_interval=1000):
             plt.title("Training curve of Tic-Tac-Toe model")
             plt.savefig("figures/part5b_256.png")
 
-            # print(win_rate_per_episode)
-            # print(loss_rate_per_episode)
-            # print(tie_rate_per_episode)
-
             #plot win/loss rates
             plt.figure()
             plt.plot(episode_axis, win_rate_per_episode , label = "win rate")
@@ -258,6 +263,8 @@ def train(policy, env, gamma=0.75, log_interval=1000):
             plt.title("Evolution of Win/Loss/Tie rates with training")
             plt.legend()
             plt.savefig("figures/part6.png")
+
+            np.save("first_move_prob_distribution.npy", first_move_prob_distr)
 
             return
 
@@ -296,18 +303,47 @@ def play_games_against_random(policy, env, games = 100):
 
     return games_won, games_lost, games_tied, invalid_moves
 
-if __name__ == '__main__':
-    import sys
-    policy = Policy()
-    env = Environment()
+def part_7():
+    prob_dist = np.load("first_move_prob_distribution.npy")
+    episode_axis = np.arange(1000,51000,1000)
 
-    if len(sys.argv) == 1:
-        # `python tictactoe.py` to train the agent
-        train(policy, env)
-    else:
-        # `python tictactoe.py <ep>` to print the first move distribution
-        # using weightt checkpoint at episode int(<ep>)
-        ep = int(sys.argv[1])
-        load_weights(policy, ep)
-        # print(first_move_distr(policy, env))
-        print(play_games_against_random(policy, env))
+    #create 3x3 subplot
+    fig = plt.figure(figsize=(10, 7))
+    a = fig.add_subplot(3, 3, 1)
+    plt.plot(episode_axis, prob_dist[0, 0, :])
+    b = fig.add_subplot(3, 3, 2)
+    plt.plot(episode_axis, prob_dist[0, 1, :])
+    c = fig.add_subplot(3,3,3)
+    plt.plot(episode_axis, prob_dist[0, 2, :])
+    d = fig.add_subplot(3,3,4)
+    plt.plot(episode_axis, prob_dist[0, 3, :])
+    e = fig.add_subplot(3,3,5)
+    plt.plot(episode_axis, prob_dist[0, 4, :])
+    f = fig.add_subplot(3,3,6)
+    plt.plot(episode_axis,prob_dist[0, 5, :])
+    g = fig.add_subplot(3,3,7)
+    plt.plot(episode_axis,prob_dist[0, 6, :])
+    h = fig.add_subplot(3,3,8)
+    plt.plot(episode_axis,prob_dist[0, 7, :])
+    i = fig.add_subplot(3,3,9)
+    plt.plot(episode_axis,prob_dist[0, 8, :])
+
+    plt.savefig("figures/part7.png")
+if __name__ == '__main__':
+
+    part_7()
+
+    # import sys
+    # policy = Policy()
+    # env = Environment()
+    #
+    # if len(sys.argv) == 1:
+    #     # `python tictactoe.py` to train the agent
+    #     train(policy, env)
+    # else:
+    #     # `python tictactoe.py <ep>` to print the first move distribution
+    #     # using weightt checkpoint at episode int(<ep>)
+    #     ep = int(sys.argv[1])
+    #     load_weights(policy, ep)
+    #     # print(first_move_distr(policy, env))
+    #     print(play_games_against_random(policy, env))
