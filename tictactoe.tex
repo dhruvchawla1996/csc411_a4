@@ -336,8 +336,11 @@ We cannot update the weights in the middle of an episode because with just one m
 \begin{homeworkProblem}
 \subsection*{4(a)}
 
+The modified \texttt{get\_reward(status)} function is included below:\\
+
 \begin{python}
 def get_reward(status):
+<<<<<<< HEAD
 """Returns a numeric given an environment status."""
 return {
 	Environment.STATUS_VALID_MOVE  : 1,
@@ -346,12 +349,24 @@ return {
 	Environment.STATUS_TIE         : -3,
 	Environment.STATUS_LOSE        : -3
 }[status]
+=======
+    """Returns a numeric given an environment status."""
+    return {
+            Environment.STATUS_VALID_MOVE  : 1,
+            Environment.STATUS_INVALID_MOVE: -250,
+            Environment.STATUS_WIN         : 500,
+            Environment.STATUS_TIE         : -3,
+            Environment.STATUS_LOSE        : -3
+    }[status]
+>>>>>>> 6a5e170ce258799bd9f6c7843c2004b205ed7232
 \end{python}
 
 
 \subsection*{4(b)}
-%Tried win value = 3, but plateaud at "tie". 
 
+There are positive and negative rewards. Negative rewards are given for undesirable outcomes (invalid move, tie and lose) while positive rewards are given for winning and making a valid move. Initially the reward for tie was positive and comparable to the reward for winning but was then made negative to increase the win rate (we observed that the AI was going for ties and was effectively treating tie-ing the same as winning).\\
+
+As far as the magnitude of the rewards go, the reward for winning was increased by a factor of 100 compared to the magnitudes of losing and tieing to incentivize the AI to win more. The reward for making an invalid move was initially -1 but was increased in magnitude to bring down the number of invalid moves during the game.\\
 
 \end{homeworkProblem}
 \clearpage
