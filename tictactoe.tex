@@ -286,7 +286,7 @@ we yield the output
 	[torch.FloatTensor of size 1x27]
 \end{verbatim}
 
-The output seems to imply that the first nine dimensions indicat entries that are empty, the second nine dimensions indicate entries that are x's and the last nine dimensions indicate entires that are o's. 
+The output seems to imply that the first nine dimensions indicate entries that are empty, the second nine dimensions indicate entries that are x's and the last nine dimensions indicate entires that are o's. 
 
 
 \subsection*{2(c)}
@@ -324,7 +324,7 @@ G_t = r_t + \gamma r_{t+1} + \gamma^2 r_{t+2} + ..
 \end{python}
 
 \subsection*{3(b)}
-We cannot update the weights in the middle of an episode because s
+We cannot update the weights in the middle of an episode because with just one move,  we cannot know if it will lead to winning/losing/having a tie. The update to weights depends on the terminating status of an episode. This is why weights must be updated after each episode, and not in between.
 
 \end{homeworkProblem}
 \clearpage
@@ -340,12 +340,12 @@ We cannot update the weights in the middle of an episode because s
 def get_reward(status):
 """Returns a numeric given an environment status."""
 return {
-		Environment.STATUS_VALID_MOVE  : 1,
-		Environment.STATUS_INVALID_MOVE: -1,
-		Environment.STATUS_WIN         : 5,
-		Environment.STATUS_TIE         : 2,
-		Environment.STATUS_LOSE        : -3
-		}[status]
+	Environment.STATUS_VALID_MOVE  : 1,
+	Environment.STATUS_INVALID_MOVE: -250,
+	Environment.STATUS_WIN         : 500,
+	Environment.STATUS_TIE         : -3,
+	Environment.STATUS_LOSE        : -3
+}[status]
 \end{python}
 
 
@@ -363,6 +363,8 @@ return {
 \begin{homeworkProblem}
 %changing hyperparameters? 
 \subsection*{5(a)}
+
+Refer to Figure \ref{fig:part5a}. One hyperparameter that was changed was $\gamma$. Initially it was set to $\gamma = 1$, but changing it to $\gamma = 0.75$ incentivized the AI to finish the game in shorter number of turns, which helped penalize ties and invalid  moves. 
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 64)}
 	\includegraphics[width=\linewidth]{figures/part5a.png}

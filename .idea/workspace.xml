@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26d04c40-3d24-45cf-8cd3-078bedd6d053" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/tictactoe.aux" afterPath="$PROJECT_DIR$/tictactoe.aux" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/tictactoe.log" afterPath="$PROJECT_DIR$/tictactoe.log" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.out" afterPath="$PROJECT_DIR$/tictactoe.out" />
       <change beforePath="$PROJECT_DIR$/tictactoe.pdf" afterPath="$PROJECT_DIR$/tictactoe.pdf" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.py" afterPath="$PROJECT_DIR$/tictactoe.py" />
       <change beforePath="$PROJECT_DIR$/tictactoe.synctex.gz" afterPath="$PROJECT_DIR$/tictactoe.synctex.gz" />
       <change beforePath="$PROJECT_DIR$/tictactoe.tex" afterPath="$PROJECT_DIR$/tictactoe.tex" />
     </list>
@@ -22,8 +20,8 @@
       <file leaf-file-name="tictactoe.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tictactoe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-566">
-              <caret line="292" column="20" lean-forward="false" selection-start-line="292" selection-start-column="20" selection-end-line="292" selection-end-column="20" />
+            <state relative-caret-position="31">
+              <caret line="181" column="28" lean-forward="false" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="28" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -36,6 +34,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>policy</find>
+      <find>get_rea</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,6 +153,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14806867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -164,7 +164,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8222491" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14873035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -249,8 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-566">
-          <caret line="292" column="20" lean-forward="false" selection-start-line="292" selection-start-column="20" selection-end-line="292" selection-end-column="20" />
+        <state relative-caret-position="31">
+          <caret line="181" column="28" lean-forward="false" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="28" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
