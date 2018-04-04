@@ -287,21 +287,27 @@ def play_games_against_random(policy, env, games = 100):
     games_won, games_lost, games_tied, invalid_moves = 0, 0, 0, 0
 
     for i in range(games):
-        if i % 19 == 0:
-            print("Game: %s"%i)
         state = env.reset()
+        # if i % 19 == 0:
+        #     print("Game: %s"%i)
+        print("Game: %s"%i)
         done = False
 
         while not done:
             action, logprob = select_action(policy, state)
             state, status, done = env.play_against_random(action)
             invalid_moves += (1 if status == env.STATUS_INVALID_MOVE else 0)
-            if i % 19 == 0:
-                env.render()
+            # if i % 19 == 0:
+            #     env.render()
+            env.render()
 
         if status == env.STATUS_WIN: games_won += 1
-        elif status == env.STATUS_LOSE: games_lost += 1
-        else: games_tied += 1
+        elif status == env.STATUS_LOSE:
+            games_lost += 1
+            print("!!!!GAME %s LOST!!!!"%i)
+        else:
+            print("Game %s LOST"%i)
+            games_tied += 1
 
     return games_won, games_lost, games_tied, invalid_moves
 
@@ -342,6 +348,7 @@ def part_7():
     plt.title("cell 8")
 
     plt.savefig("figures/part7.png")
+
 if __name__ == '__main__':
 
 

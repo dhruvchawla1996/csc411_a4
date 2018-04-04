@@ -154,7 +154,7 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\hmwkTitle}{Project\ \#4 \\ Tic-Tac-Toe with Policy Gradient} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ March\ 19,\ 2018} % Due date
+\newcommand{\hmwkDueDate}{Tuesday,\ April\ 3,\ 2018} % Due date
 \newcommand{\hmwkClass}{CSC411} % Course/class
 \newcommand{\hmwkClassTime}{L2501} % Class/lecture time
 \newcommand{\hmwkFirstAuthorName}{Dhruv Chawla} % First name
@@ -189,7 +189,7 @@
 
 \begin{homeworkProblem}
 
-\noindent \textit{Tic-Tac-Toe text output}
+The tic-tac-toe text output is shown below. 
 \begin{verbatim}
 
 
@@ -340,7 +340,6 @@ The modified \texttt{get\_reward(status)} function is included below:\\
 
 \begin{python}
 def get_reward(status):
-<<<<<<< HEAD
 """Returns a numeric given an environment status."""
 return {
 	Environment.STATUS_VALID_MOVE  : 1,
@@ -349,16 +348,7 @@ return {
 	Environment.STATUS_TIE         : -3,
 	Environment.STATUS_LOSE        : -3
 }[status]
-=======
-    """Returns a numeric given an environment status."""
-    return {
-            Environment.STATUS_VALID_MOVE  : 1,
-            Environment.STATUS_INVALID_MOVE: -250,
-            Environment.STATUS_WIN         : 500,
-            Environment.STATUS_TIE         : -3,
-            Environment.STATUS_LOSE        : -3
-    }[status]
->>>>>>> 6a5e170ce258799bd9f6c7843c2004b205ed7232
+
 \end{python}
 
 
@@ -379,15 +369,16 @@ As far as the magnitude of the rewards go, the reward for winning was increased 
 %changing hyperparameters? 
 \subsection*{5(a)}
 
-Refer to Figure \ref{fig:part5a}. One hyperparameter that was changed was $\gamma$. Initially it was set to $\gamma = 1$, but changing it to $\gamma = 0.75$ incentivized the AI to finish the game in shorter number of turns, which helped penalize ties and invalid  moves. 
+Refer to Figure \ref{fig:part5a_64}. One hyperparameter that was changed was $\gamma$. Initially it was set to $\gamma = 1$, but changing it to $\gamma = 0.75$ incentivized the AI to finish the game in shorter number of turns, which helped penalize ties and invalid  moves. 
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 64)}
-	\includegraphics[width=\linewidth]{figures/part5a.png}
-	\label{fig:part5a}
+	\includegraphics[width=\linewidth]{figures/part5a_64.png}
+	\label{fig:part5a_64}
 \end{figure}
-\subsection*{5(b)}
-The number of hidden units were reset to values 32, 128 and 256 to obtain the following training curves:
 
+
+\subsection*{5(b)}
+The number of hidden units were reset to values 32, 128 and 256 to obtain the training curves in Figure \ref{fig:part5b_32}, \ref{fig:part5b_128} and \ref{fig:part5b_256} respectively. 
 \newpage
 \begin{figure}[h]
 	\caption{Training curve ($\#$ hidden units: 32)}
@@ -411,10 +402,10 @@ The number of hidden units were reset to values 32, 128 and 256 to obtain the fo
 \newpage
 
 \subsection*{5(c)}
-From Figure \ref{fig:part5a}, it seems as though the policy never played invalid moves. 
+For training with hidden units 32, 64 and 128, Figures \ref{fig:part5a_64},  \ref{fig:part5b_32} and \ref{fig:part5b_128} imply that the policy never plays excessive invalid moves since the average return never becomes negative. For the case of 256 hidden units however, the average dips to a significant nevative value at around the 35000 episode. So, the policy probably learnt to stop playing invalid moves after that. 
 
 \subsection*{5(d)}
-Using the final learned policy, the agent wins 98/100 games and ties 2/100. This can be seen in Figure \ref{fig:part6}. Five of the 100 sample games are displayed below:
+Using the final learned policy, the agent wins 98/100 games and ties 2/100. This can be seen in Figure \ref{fig:part6}. Five of the 100 sample games are displayed below. Our agent plays crosses and makes the first move. The agent clearly always makes the first cross on cell 2 (top right). It seems to make its second move on cell 8 (bottom right), if not already occupied. It seems easy for the agent to win since the random player doesn't try to stop the agent from making obvious wins. 
 
 \begin{multicols}{5}
 	\begin{verbatim}
@@ -523,7 +514,7 @@ Using the final learned policy, the agent wins 98/100 games and ties 2/100. This
 %	PROBLEM 6
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
-Refer to Figure \ref{fig:part6}.
+The evolution of win/loss and tie rates is shown in Figure \ref{fig:part6}. It is clear that the win rate generally increases towards the end of training while loss and tie rates decrease.
 \begin{figure}[h]
 	\caption{}
 	\includegraphics[width=\linewidth]{figures/part6.png}
@@ -536,7 +527,7 @@ Refer to Figure \ref{fig:part6}.
 %	PROBLEM 7
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
-	Refer to Figure \ref{fig:part7}.
+	Figure \ref{fig:part7} displays how the probability that the first move will be a particular cell evolves with training. Intially, cells 1, 3 and 6 are chosen with the highest probability for first move, but their probabilities gradually go to zero with training. Cells 0, 4 and 7 always seem to have the lowest probabilities. Cells 2, 5 and 8 are preferred to be first moves as training progresses with cell 2 being the best choice at the end of training. This is consistent with the sample games displayed in part 5(d).
 	\begin{figure}[h]
 		\centering
 		\caption{Evolution of first move probability for each of the 9 cells of the tic-tac-toe board}
@@ -551,6 +542,49 @@ Refer to Figure \ref{fig:part6}.
 %	PROBLEM 8
 %----------------------------------------------------------------------------------------
 \begin{homeworkProblem}
+The states for the two un-won games are shown below. 
+\begin{multicols}{2}
+	\begin{verbatim}
+		Game: 64
+		..x
+		.o.
+		...
+		====
+		..x
+		.oo
+		..x
+		====
+		x.x
+		ooo
+		..x
+		====
+		!!!!GAME 64 LOST!!!!
+		
+	\end{verbatim}
+	\columnbreak
+	\begin{verbatim}
+		Game: 69
+		..x
+		.o.
+		...
+		====
+		..x
+		.oo
+		..x
+		====
+		xox
+		.oo
+		..x
+		====
+		xox
+		ooo
+		x.x
+		====
+		!!!!GAME 69 LOST!!!!
+	\end{verbatim}
+\end{multicols}
+
+For game 64, the agent failed to block cell 3 (middle left) and prevent the random player from winning. Again, in game 69, the agent failed to block the same cell. The agent seems to prefer placing crosses on the corner cells. 
 \end{homeworkProblem}
 
 
