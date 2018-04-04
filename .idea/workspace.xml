@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26d04c40-3d24-45cf-8cd3-078bedd6d053" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/figures/part5a.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/figures/part5b_128.png" afterPath="$PROJECT_DIR$/figures/part5b_128.png" />
-      <change beforePath="$PROJECT_DIR$/figures/part5b_32.png" afterPath="$PROJECT_DIR$/figures/part5b_32.png" />
-      <change beforePath="$PROJECT_DIR$/figures/part7.png" afterPath="$PROJECT_DIR$/figures/part7.png" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.aux" afterPath="$PROJECT_DIR$/tictactoe.aux" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.log" afterPath="$PROJECT_DIR$/tictactoe.log" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.pdf" afterPath="$PROJECT_DIR$/tictactoe.pdf" />
       <change beforePath="$PROJECT_DIR$/tictactoe.py" afterPath="$PROJECT_DIR$/tictactoe.py" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.synctex.gz" afterPath="$PROJECT_DIR$/tictactoe.synctex.gz" />
-      <change beforePath="$PROJECT_DIR$/tictactoe.tex" afterPath="$PROJECT_DIR$/tictactoe.tex" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-1000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-1000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-10000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-10000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-11000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-11000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-12000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-12000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-13000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-13000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-14000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-14000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-15000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-15000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-16000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-16000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-17000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-17000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-18000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-18000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-19000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-19000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-2000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-2000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-20000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-20000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-21000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-21000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-22000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-22000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-23000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-23000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-24000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-24000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-25000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-25000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-26000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-26000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-27000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-27000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-28000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-28000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-29000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-29000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-3000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-3000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-30000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-30000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-31000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-31000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-32000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-32000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-33000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-33000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-34000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-34000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-35000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-35000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-36000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-36000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-37000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-37000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-38000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-38000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-39000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-39000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-4000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-4000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-40000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-40000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-41000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-41000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-42000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-42000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-43000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-43000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-44000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-44000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-45000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-45000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-46000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-46000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-47000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-47000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-48000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-48000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-49000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-49000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-5000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-5000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-50000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-50000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-6000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-6000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-7000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-7000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-8000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-8000.pkl" />
-      <change beforePath="$PROJECT_DIR$/ttt/policy-9000.pkl" afterPath="$PROJECT_DIR$/ttt/policy-9000.pkl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,8 +16,8 @@
       <file leaf-file-name="tictactoe.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tictactoe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="306" column="39" lean-forward="false" selection-start-line="306" selection-start-column="39" selection-end-line="306" selection-end-column="39" />
+            <state relative-caret-position="207">
+              <caret line="289" column="27" lean-forward="false" selection-start-line="289" selection-start-column="27" selection-end-line="289" selection-end-column="27" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -211,6 +151,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14806867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -221,7 +162,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9177751" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13301088" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -311,8 +252,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tictactoe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="306" column="39" lean-forward="false" selection-start-line="306" selection-start-column="39" selection-end-line="306" selection-end-column="39" />
+        <state relative-caret-position="207">
+          <caret line="289" column="27" lean-forward="false" selection-start-line="289" selection-start-column="27" selection-end-line="289" selection-end-column="27" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

@@ -288,8 +288,6 @@ def play_games_against_random(policy, env, games = 100):
 
     for i in range(games):
         state = env.reset()
-        # if i % 19 == 0:
-        #     print("Game: %s"%i)
         print("Game: %s"%i)
         done = False
 
@@ -297,8 +295,6 @@ def play_games_against_random(policy, env, games = 100):
             action, logprob = select_action(policy, state)
             state, status, done = env.play_against_random(action)
             invalid_moves += (1 if status == env.STATUS_INVALID_MOVE else 0)
-            # if i % 19 == 0:
-            #     env.render()
             env.render()
 
         if status == env.STATUS_WIN: games_won += 1
