@@ -363,4 +363,4 @@ if __name__ == '__main__':
         # print(first_move_distr(policy, env))
         print(play_games_against_random(policy, env))
 
-    part_7()
+    #part_7()
